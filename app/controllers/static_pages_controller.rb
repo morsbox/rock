@@ -6,5 +6,6 @@ class StaticPagesController < ApplicationController
   
   def show
     @current_pages = StaticPage.where(:url_match => params[:url_match])
+    render :text=>"No matches for '"+params[:url_match]+"'" if @current_pages.empty?
   end
 end
