@@ -5,6 +5,7 @@ class CreateStaticPages < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.string :url_match
+      t.integer :order_on_main, :default=>0
 
       t.timestamps
     end
