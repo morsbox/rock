@@ -1,0 +1,45 @@
+html {
+    margin: 0px;
+    height: 100%;
+    padding: 0px;
+    border: none;
+    outline-width: 0px;
+    outline-style: none;
+}
+body { 
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    outline-width: 0px;
+    outline-style: none;
+    background:#f1f3f5;
+}
+
+.clr {
+    clear:both;
+}
+
+#top {
+    height:100px;
+}
+
+#left {
+    float:left;
+    width:300px;
+}
+
+#right {
+    float: right;
+    width: 200px;
+}
+
+#content {
+    margin: 0 210px 0 310px;
+    padding:10px;
+    background:#fff;
+}
+
+#bottom {
+    height:50px;
+}

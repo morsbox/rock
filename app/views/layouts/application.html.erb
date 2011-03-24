@@ -7,8 +7,11 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<%= sider 'top' %>
-<%= yield %>
-<%= sider 'bottom' %>
+  <div id="top"><%= sider 'top' %></div>
+  <div id="left"><%= sider 'left' %></div>
+  <div id="right"><%= sider 'right' %></div>
+  <div id="content"><%= yield %></div>
+  <div class="clr"></div>
+  <div id="bottom"><%= sider 'bottom' %></div>
 </body>
 </html>
