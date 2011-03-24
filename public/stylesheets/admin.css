@@ -1,0 +1,21 @@
+html {
+    margin: 0px;
+    height: 100%;
+    padding: 0px;
+    border: none;
+    outline-width: 0px;
+    outline-style: none;
+}
+body { 
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    outline-width: 0px;
+    outline-style: none;
+    background:#f1f3f5;
+}
+
+.clr {
+    clear:both;
+}
