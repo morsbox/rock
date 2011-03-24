@@ -6,5 +6,5 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-StaticPage.create :title => "Welcome!", :content => "<p>Welcome to the Rock'n'RoR!</p>",
-    :order_on_main=>1, :url_match => "home"
+StaticPage.create :title => "Welcome!", :content => "<p>Welcome to the
+    <strong>Rock'n'RoR!</strong></p>", :order_on_main=>1, :url_match => "home"

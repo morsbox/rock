@@ -3,9 +3,13 @@ class CreateStaticPages < ActiveRecord::Migration
     create_table :static_pages do |t|
       t.references :author
       t.string :title
+      t.boolean :show_title, :default=>true
       t.text :content
       t.string :url_match
-      t.integer :order_on_main, :default=>0
+      t.integer :order_on_main,  :default=>0
+      t.integer :order_in_group, :default=>0
+      t.integer :access_level,   :default=>0
+      
 
       t.timestamps
     end
