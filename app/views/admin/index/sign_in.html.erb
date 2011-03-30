@@ -1,6 +1,6 @@
 <h2>Sign in</h2>
 
-<%= form_for("user", :url => user_session_path) do |f| %>
+<%= form_for("user", :url => user_session_path(:admin_zone=>true)) do |f| %>
   <%= f.text_field :username %>
   <%= f.password_field :password %>
   <%= f.check_box :remember_me %>

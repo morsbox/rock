@@ -8,7 +8,8 @@
 </head>
 <body>
   <% if user_signed_in? %>
-     <p><%= link_to "Sign out, #{current_user.username}", destroy_user_session_path %></p>
+     <p><%= link_to "Sign out, #{current_user.username}",
+            destroy_user_session_path(:admin_zone=>true) %></p>
   <% end %>
   <%= yield %>
 </body>
