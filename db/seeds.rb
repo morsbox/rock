@@ -1,10 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
 
 if StaticPage.where(:url_match => "home").empty?
   StaticPage.create :title => "Welcome!",
@@ -17,4 +12,10 @@ if User.where(:username => "admin").empty?
                    :password => "123456"
   user.access_level = 100
   user.save
+end
+
+if SiderType.where(:helper_name => "static_sider").empty?
+  static_sider = SiderType.create :helper_name => "static_sider",
+      :default_params => {:content => {:type => 'text', :value => ''},
+                          :show_title => {:type => 'check', :value => true}}
 end
