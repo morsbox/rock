@@ -5,9 +5,15 @@ class SiderType < ActiveRecord::Base
   after_find :load_params
   
   def self.list_of_all_helpers
-    SiderHelpers.constants.map{ |sh|
-      to_helper_module(sh).class==Module ? sh.to_s : nil
-    }.compact
+    list = HashWithIndifferentAccess.new{{}}
+    SiderHelpers.constants.each do |sh|
+      sh_module = to_helper_module(sh)
+      list[sh] = {:module => sh_module} if sh_module.class==Module
+    end
+    all.each do |st|
+      list[st.sider_helper_module] = list[st.sider_helper_module].merge :model => st
+    end
+    list
   end
   
   def self.to_helper_module(name)
