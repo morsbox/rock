@@ -14,8 +14,6 @@ if User.where(:username => "admin").empty?
   user.save
 end
 
-if SiderType.where(:helper_name => "static_sider").empty?
-  static_sider = SiderType.create :helper_name => "static_sider",
-      :default_params => {:content => {:type => 'text', :value => ''},
-                          :show_title => {:type => 'check', :value => true}}
+if SiderType.where(:sider_helper_module => "StaticSider").empty?
+  SiderType.create :sider_helper_module => "StaticSider"
 end
