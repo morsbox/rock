@@ -1,7 +1,8 @@
 Rock::Application.routes.draw do
   devise_for :users
   namespace 'admin' do
-    root :to => "index#index"  
+    root :to => "index#index"
+    resources :sider_types, :except => [:new, :show, :edit]
   end
   
   root :to => "static_pages#index"
