@@ -19,3 +19,12 @@ body {
 .clr {
     clear:both;
 }
+
+.admin_table {
+    border-collapse: collapse;
+}
+
+.admin_table td, .admin_table th {
+    border: 1px solid black;
+    padding: 1px 5px;
+}

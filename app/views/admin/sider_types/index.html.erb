@@ -1,3 +1,34 @@
-<% @list_of_all_helpers.each do |h| %>
-  <%= h %>
+<table class="admin_table">
+  <tr>
+    <th>Module</th>
+    <th>Description</th>
+    <th>Registration</th>
+    <th>Activity</th>
+  </tr>
+<% @list_of_all_helpers.each do |m, h| %>
+  <tr>
+    <td><%= m %></td>
+    <td>
+      <% if h[:module] %>
+        <%= h[:module].description %>
+      <% else %>
+        <span class="error">This module absent. Please delete its registration.</span>
+      <% end %>
+    </td>
+    <% if h[:model] %>
+      <td>Registered.
+        <%= link_to "You can delete registration.", admin_sider_type_path(h[:model]),
+              :method => :delete,
+              :confirm => "This deletes all siders based on this Helper module. If you want temporarly switch off siders use activity control. Continue?" %>
+      </td>
+      <td><%= h[:model].enabled ? "Enabled. " : "Disabled. " %>
+        <%= link_to "Toggle activity.", admin_sider_type_path(h[:model]), :method => :put %>
+      </td>
+    <% else %>
+      <td><%= link_to "Register.", admin_sider_types_path(:sider_helper_module => m),
+              :method => :post %></td>
+      <td>Please register sider first.</td>
+    <% end %>
+  </tr>
 <% end %>
+</table>

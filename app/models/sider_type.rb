@@ -1,5 +1,5 @@
 class SiderType < ActiveRecord::Base
-  has_many :siders
+  has_many :siders, :dependent => :destroy
   validates_presence_of :sider_helper_module
   attr_accessor :default_params
   after_find :load_params

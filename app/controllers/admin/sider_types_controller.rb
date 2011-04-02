@@ -4,14 +4,18 @@ class Admin::SiderTypesController < Admin::IndexController
   end
   
   def create
-    redirect_to :admin_sider_types_path
+    SiderType.create :sider_helper_module => params[:sider_helper_module]
+    redirect_to :admin_sider_types
   end
   
   def update
-    redirect_to :admin_sider_types_path
+    st = SiderType.find params[:id]
+    st.update_attribute "enabled",!st.enabled
+    redirect_to :admin_sider_types
   end
   
   def destroy
-    redirect_to :admin_sider_types_path
+    SiderType.find(params[:id]).destroy
+    redirect_to :admin_sider_types
   end
 end
