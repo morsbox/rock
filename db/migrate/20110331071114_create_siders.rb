@@ -6,6 +6,7 @@ class CreateSiders < ActiveRecord::Migration
       t.string :sider_position, :null => false
       t.text :params_dump
       t.text :restrictions_dump
+      t.integer :access_level, :default => 0
       t.boolean :enabled, :default=> true
 
       t.timestamps

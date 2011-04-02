@@ -14,6 +14,6 @@ if User.where(:username => "admin").empty?
   user.save
 end
 
-if SiderType.where(:sider_helper_module => "StaticSider").empty?
-  SiderType.create :sider_helper_module => "StaticSider"
+SiderType.list_of_all_helpers.each do |name, st|
+  SiderType.create :sider_helper_module => name if st[:module] and !st[:model]
 end
