@@ -4,6 +4,7 @@ class CreateSiders < ActiveRecord::Migration
       t.references :sider_type
       t.string :title, :null => false
       t.string :sider_position, :null => false
+      t.integer :display_order, :default => 0
       t.text :params_dump
       t.text :restrictions_dump
       t.integer :access_level, :default => 0

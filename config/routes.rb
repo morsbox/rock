@@ -3,6 +3,7 @@ Rock::Application.routes.draw do
   namespace 'admin' do
     root :to => "index#index"
     resources :sider_types, :except => [:new, :show, :edit]
+    resources :siders, :except => :show
   end
   
   root :to => "static_pages#index"
