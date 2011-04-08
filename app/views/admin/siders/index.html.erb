@@ -1,1 +1,20 @@
 <h2>List of siders</h2>
+<%= link_to 'Create new', new_admin_sider_path %>
+<table class="admin_table">
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Position</th>
+    <th>Type</th>
+    <th>Activity</th>
+  </tr>  
+  <% @siders.each do |sider| %>
+  <tr>
+    <td><%= sider.id %></td>
+    <td><%= sider.title %></td>
+    <td><%= sider.sider_position %></td>
+    <td><%= sider.sider_type.sider_helper_module %></td>
+    <td><%= sider.activity %></td>
+  </tr>
+  <% end %>
+</table>

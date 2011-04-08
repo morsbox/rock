@@ -26,6 +26,10 @@ class SiderType < ActiveRecord::Base
     nil
   end
   
+  def helper
+    self.class.to_helper_module sider_helper_module
+  end
+  
   def load_params
     self.default_params = {}
   end

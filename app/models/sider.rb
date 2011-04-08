@@ -2,7 +2,7 @@ class Sider < ActiveRecord::Base
   belongs_to :sider_type
   validates_presence_of :title, :sider_position
   before_save :make_dumps
-  attr_accessor :params, restrictions
+  attr_accessor :params, :restrictions
   after_find :load_dumps
   
   def load_dumps

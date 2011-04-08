@@ -1,0 +1,17 @@
+<h2>Select sider type for new sider</h2>
+<table class="admin_table">
+  <tr>
+    <th>Id</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th></th>
+  </tr>  
+  <% @sider_types.each do |st| %>
+  <tr>
+    <td><%= st.id %></td>
+    <td><%= st.sider_helper_module %></td>
+    <td><%= st.helper.description %></td>
+    <td><%= link_to "Select this type", new_admin_sider_path(:sider_type_id=>st) %></td>
+  </tr>
+  <% end %>
+</table>
