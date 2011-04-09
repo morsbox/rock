@@ -11,11 +11,16 @@ class Sider < ActiveRecord::Base
   end
   
   def make_dumps
-    self.params_dump = Marshal.dump(params)
-    self.restrictions_dump = Marshal.dump(restrictions)
+    self.params_dump = Marshal.dump(params||{})
+    self.restrictions_dump = Marshal.dump(restrictions||{})
   end
   
   def output
-    "<div class='sider_#{sider_position}'>Content of #{title}</div>"
+    # title and position is parameters for helper too
+    output_params = params.merge :title => title, :sider_position => sider_position
+    # if some parameters not asigned, use defaults
+    sider_type.helper.default_params.each{ |key, value| output_params[:key] ||= value[:value] }
+    # load helper
+    sider_type.helper.output output_params
   end
 end
