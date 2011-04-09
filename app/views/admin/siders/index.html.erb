@@ -7,6 +7,8 @@
     <th>Position</th>
     <th>Type</th>
     <th>Activity</th>
+    <th></th>
+    <th></th>
   </tr>  
   <% @siders.each do |sider| %>
   <tr>
@@ -14,7 +16,9 @@
     <td><%= sider.title %></td>
     <td><%= sider.sider_position %></td>
     <td><%= sider.sider_type.sider_helper_module %></td>
-    <td><%= sider.activity %></td>
+    <td><%= sider.enabled %></td>
+    <td><%= link_to "Edit", edit_admin_sider_path(sider) %></td>
+    <td><%= link_to "Delete", admin_sider_path(sider), :method => :delete, :confirm => "Are you sure?" %></td>
   </tr>
   <% end %>
 </table>

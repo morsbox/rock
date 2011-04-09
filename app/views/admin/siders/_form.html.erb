@@ -1,0 +1,18 @@
+<%= form_for [:admin, @sider] do |f| %>
+  <fieldset class='admin_form'>
+    <legend>General settings</legend>
+    <span class='left_column'>Type:</span>
+    <span class='right_column'><%= @sider.sider_type.sider_helper_module %></span>
+    <%= f.hidden_field :sider_type_id %>
+    <%= f.label :title %><%= f.text_field :title %>
+    <%= f.label :sider_position %><%= f.text_field :sider_position %>
+    <%= f.label :display_order %><%= f.text_field :display_order %>
+    <%= f.label :access_level %><%= f.text_field :access_level %>
+    <%= f.label :enabled %><%= f.check_box :enabled %>
+  </fieldset>
+  <fieldset>
+    <legend>Sider parameters</legend>
+    
+  </fieldset>
+  <%= f.submit %>
+<% end %>
