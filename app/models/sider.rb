@@ -14,4 +14,8 @@ class Sider < ActiveRecord::Base
     self.params_dump = Marshal.dump(params)
     self.restrictions_dump = Marshal.dump(restrictions)
   end
+  
+  def output
+    "<div class='sider_#{sider_position}'>Content of #{title}</div>"
+  end
 end

@@ -6,7 +6,8 @@ class Admin::IndexController < ApplicationController
   end
   
   private
+  
   def check_admin
-    render 'admin/index/sign_in' unless current_user and current_user.access_level>=50
+    render 'admin/index/sign_in' unless @access_level>=50
   end
 end
