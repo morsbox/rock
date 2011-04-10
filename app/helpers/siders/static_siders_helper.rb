@@ -7,7 +7,13 @@ module Siders::StaticSidersHelper
       :show_title => {:type => 'check', :value => true}}
   end
   
-  def self.output(p)
+  def self.output_method
+    :static_siders_output
+  end
+end
+
+module ApplicationHelper
+  def static_siders_output(p)
     title = "<h3>#{p[:title]}</h3>" if p[:show_title]
     <<-HTML
       <div class='sider_#{p[:sider_position]}'>
@@ -15,5 +21,7 @@ module Siders::StaticSidersHelper
       Content of #{p[:title]}
       </div>
     HTML
+    debug p
+    user_session_path
   end
 end
