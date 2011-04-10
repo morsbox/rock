@@ -8,7 +8,8 @@ class SiderType < ActiveRecord::Base
   # :name => {:module => <SiderHelpers::SiderHelper>, :model => <InstanceOfSiderType>}
   def self.list_of_all_helpers
     list = HashWithIndifferentAccess.new{{}}
-    SiderHelpers.constants.each do |sh|
+    Dir[RAILS_ROOT+"/app/helpers/siders/*.rb"].each {|file| require file }
+    Siders.constants.each do |sh|
       sh_module = to_helper_module(sh)
       list[sh] = {:module => sh_module} if sh_module.class==Module
     end
@@ -21,7 +22,7 @@ class SiderType < ActiveRecord::Base
   
   # returns sider helper module by simple name or nil if it's not present
   def self.to_helper_module(name)
-    eval "SiderHelpers::"+name.to_s
+    eval "Siders::"+name.to_s
   rescue
     nil
   end
