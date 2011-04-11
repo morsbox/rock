@@ -1,4 +1,14 @@
 <%= form_for [:admin, @sider] do |f| %>
+  <% if flash[:errors].any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(flash[:errors].count, "error") %> prohibited this sider from being saved:</h2>
+    <ul>
+    <% flash[:errors].full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
   <fieldset class='admin_form'>
     <legend>General settings</legend>
     <span class='left_column'>Type:</span>
