@@ -3,7 +3,7 @@ module Siders::AuthSidersHelper
     "This sider used for display login/logout form"
   end
   def self.default_params
-    { :show_title => {:type => 'check', :value => true},
+    { :show_title => {:type => 'check', :value => '1'},
       :greeting_msg => {:type => 'string', :value => 'Hello, #{current_user.username}'}}
   end
   

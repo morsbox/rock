@@ -16,6 +16,7 @@ class Sider < ActiveRecord::Base
   end
 
   def output_params
+    return {} if new_record?
     # title and position is parameters for helper too
     output_params = params.merge :title => title, :sider_position => sider_position
     # if some parameters not asigned, use defaults

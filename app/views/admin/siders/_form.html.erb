@@ -1,5 +1,5 @@
 <%= form_for [:admin, @sider] do |f| %>
-  <% if flash[:errors].any? %>
+  <% if flash[:errors] %>
   <div id="errorExplanation">
     <h2><%= pluralize(flash[:errors].count, "error") %> prohibited this sider from being saved:</h2>
     <ul>
@@ -20,9 +20,11 @@
     <%= f.label :access_level %><%= f.text_field :access_level %>
     <%= f.label :enabled %><%= f.check_box :enabled %>
   </fieldset>
-  <fieldset>
+  <fieldset class='admin_form'>
     <legend>Sider parameters</legend>
-    
+    <% @sider_helper_params.each_key do |p| %>
+      <%= param_fields p %>
+    <% end %>
   </fieldset>
   <%= f.submit %>
 <% end %>
