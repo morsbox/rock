@@ -15,8 +15,12 @@
     <td><%= sider.id %></td>
     <td><%= sider.title %></td>
     <td><%= sider.sider_position %></td>
-    <td><%= sider.sider_type.sider_helper_module %></td>
-    <td><%= sider.enabled %></td>
+    <td><%= sider.sider_type.sider_helper_module %>
+        <%= " (disabled)" unless sider.sider_type.enabled %>
+    </td>
+    <td><%= sider.enabled ? "Enabled. " : "Disabled. " %>
+      <%= link_to "Toggle activity.", admin_sider_path(sider, :sider => {:enabled => !sider.enabled}), :method => :put %>
+    </td>
     <td><%= link_to "Edit", edit_admin_sider_path(sider) %></td>
     <td><%= link_to "Delete", admin_sider_path(sider), :method => :delete, :confirm => "Are you sure?" %></td>
   </tr>

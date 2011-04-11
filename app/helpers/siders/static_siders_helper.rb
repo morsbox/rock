@@ -21,7 +21,5 @@ module ApplicationHelper
       Content of #{p[:title]}
       </div>
     HTML
-    debug p
-    user_session_path
   end
 end

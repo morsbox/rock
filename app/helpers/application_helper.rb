@@ -1,6 +1,6 @@
 module ApplicationHelper
   def sider(sider_position)
-    siders = Sider.where(:sider_position => sider_position, :enabled => true).where(["access_level<=?",@access_level]).order(:display_order).includes(:sider_type)
+    siders = Sider.joins(:sider_type).where(:sider_position => sider_position, :enabled => true, "sider_types.enabled" => true).where(["access_level<=?",@access_level]).order(:display_order)
     result = ""
     siders.each do |sider|
       result+=try sider.sider_type.helper.output_method, sider.output_params
