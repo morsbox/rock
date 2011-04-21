@@ -1,6 +1,6 @@
 class PageCategory < ActiveRecord::Base
   has_many  :child_categories, :class_name => "PageCategory",
-            :foreign_key => "parent_category_id"
+            :foreign_key => "parent_category_id", :dependent => :nullify
   belongs_to :parent_category, :class_name => "PageCategory"
   has_many :static_pages, :dependent => :nullify
   

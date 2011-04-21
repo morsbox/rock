@@ -5,7 +5,6 @@ module Admin::PageCategoriesHelper
       result+="<div style='padding-left:#{level*10}px'>"
       result+= form_for [:admin, @categories[parent_category]] do |f|
         concat f.text_field :title
-        @options_tree ||= [["root", nil]]+draw_options_tree
         concat f.select :parent_category_id, @options_tree
         concat f.submit
         concat link_to "delete", admin_page_category_path(@categories[parent_category]), :method => :delete, :confirm => "Are you sure?"

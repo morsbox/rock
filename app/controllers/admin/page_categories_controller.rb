@@ -8,14 +8,17 @@ class Admin::PageCategoriesController < Admin::IndexController
   end
   
   def create
+    PageCategory.create params[:page_category]
     redirect_to admin_page_categories_path
   end
   
   def update
+    PageCategory.find(params[:id]).update_attributes params[:page_category]
     redirect_to admin_page_categories_path
   end
   
   def destroy
+    PageCategory.find(params[:id]).destroy
     redirect_to admin_page_categories_path
   end
 end

@@ -1,3 +1,9 @@
 <h2>Structure of categories</h2>
-
+<%= form_for [:admin,PageCategory.new] do |f| %>
+  <%= f.text_field :title %>
+  <% @options_tree = [["root", nil]]+draw_options_tree %>
+  <%= f.select :parent_category_id, @options_tree %>
+  <%= f.submit %>
+<% end %>
+<hr />
 <%= raw draw_graph %>
