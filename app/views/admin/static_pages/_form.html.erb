@@ -1,0 +1,23 @@
+<%= form_for [:admin, @static_page] do |f| %>
+  <% if flash[:errors] %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(flash[:errors].count, "error") %> prohibited this static page from being saved:</h2>
+    <ul>
+    <% flash[:errors].full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <fieldset class='admin_form'>
+    <legend>General settings</legend>
+    <%= f.label :url_match %><%= f.text_field :url_match %>
+    <%= f.label :title %><%= f.text_field :title %>
+    <%= f.label :show_title %><%= f.check_box :show_title %>
+    <%= f.label :page_category_id %>
+    <%= f.select :page_category_id, [["root", nil]]+draw_options_tree %>
+    <%= f.label :content %><%= f.text_area :content %>
+    <%= f.label :access_level %><%= f.text_field :access_level %>
+  </fieldset>
+  <%= f.submit %>
+<% end %>

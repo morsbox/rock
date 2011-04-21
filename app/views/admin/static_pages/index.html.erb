@@ -1,0 +1,20 @@
+<h2>List of static pages</h2>
+<%= link_to 'Create new', new_admin_static_page_path %>
+<table class="admin_table">
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>URL</th>
+    <th></th>
+    <th></th>
+  </tr>  
+  <% @static_pages.each do |page| %>
+  <tr>
+    <td><%= page.id %></td>
+    <td><%= page.title %></td>
+    <td><%= page.url_match %></td>
+    <td><%= link_to "Edit", edit_admin_static_page_path(page) %></td>
+    <td><%= link_to "Delete", admin_static_page_path(page), :method => :delete, :confirm => "Are you sure?" %></td>
+  </tr>
+  <% end %>
+</table>

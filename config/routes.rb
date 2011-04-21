@@ -5,6 +5,7 @@ Rock::Application.routes.draw do
     resources :page_categories, :except => [:new, :show, :edit]
     resources :sider_types, :except => [:new, :show, :edit]
     resources :siders, :except => :show
+    resources :static_pages, :except => :show
   end
   
   root :to => "static_pages#index"
