@@ -7,7 +7,7 @@ module Admin::PageCategoriesHelper
         concat f.text_field :title
         concat f.select :parent_category_id, @options_tree
         concat f.submit
-        concat link_to "delete", admin_page_category_path(@categories[parent_category]), :method => :delete, :confirm => "Are you sure?"
+        concat link_to t.delete, admin_page_category_path(@categories[parent_category]), :method => :delete, :confirm => "Are you sure?"
       end
       result+="</div>"
     end

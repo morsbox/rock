@@ -1,12 +1,12 @@
-<h2>List of siders</h2>
-<%= link_to 'Create new', new_admin_sider_path %>
+<h2><%= t.admin["Manage siders"] %></h2>
+<%= link_to t.admin.create_new, new_admin_sider_path %>
 <table class="admin_table">
   <tr>
     <th>Id</th>
-    <th>Title</th>
-    <th>Position</th>
-    <th>Type</th>
-    <th>Activity</th>
+    <th><%= t.admin.title %></th>
+    <th><%= t.admin.position %></th>
+    <th><%= t.admin.type %></th>
+    <th><%= t.admin.activity %></th>
     <th></th>
     <th></th>
   </tr>  

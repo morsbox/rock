@@ -1,10 +1,59 @@
+activerecord:
+    models:
+        page_category: Категория страниц
+        sider: Сайдер
+        
 admin:
+    admin_zone: административная зона
+    back: Вернуться
+    Back to site: Перейти на сайт
+    Main panel: Главная панель
+    Manage categories: Управление категориями
+    Manage siders: Управление сайдерами
+    Manage static pages: Управление статичными страницами
+    Register siders: Регистрация сайдеров
     sign_in: Вход в административную зону
+    welcome: Добро пожаловать в административную зону
+    # sider_types
+    activity: Активность
+    absent_module: Этот модуль отсутствует. Пожалуйста. удалите его регистрацию.
+    delete_registration: Вы можете удалить регистрацию.
+    delete_registration_confirm: Сейчас будут удалены все сайдеры, основанные на этом модуле хелпера. Если вы хотите временно отключить сайдеры, используйте управление активностью. Продолжить?
+    description: Описание
+    disabled: Отключен. 
+    enabled: Включен. 
+    module: Модуль
+    register: Зарегистрировать
+    register_please: Пожалуйста. сначала зарегистрируйте сайдер.
+    registered: Зарегистрирован.
+    registration: Регистрация
+    toggle: Переключить активность.
+    # siders
+    create_new: Создать новый
+    edit_sider: Редактирование сайдера
+    general_settings: Основные настройки
+    new_sider: Новый сайдер
+    position: Позиция
+    Select this type: Выбрать этот тип
+    select_sider_type: Выберите тип для нового сайдера
+    sider_params: Параметры сайдера
+    title: Заголовок
+    type: Тип
     
 devise:
     Forgot your password?: Забыли пароль?
+    sign_out: Выйти, %1
     
 helpers:
     label:
         user:
             remember_me: Запомните меня
+        sider:
+            access_level: Уровень доступа
+            display_order: Порядок отображения
+            enabled: Включен?
+            sider_position: Позиция сайдера
+            title: Заголовок
+
+static_page:
+    no_matches: Нет совпадений для URL '%1'

@@ -1,10 +1,60 @@
+activerecord:
+    models:
+        page_category: Category of pages
+        sider: Sider
+        
 admin:
+    admin_zone: admin zone
+    back: Back
+    Back to site: Back to site
+    Main panel: Main panel
+    Manage categories: Manage categories
+    Manage siders: Manage siders
+    Manage static pages: Manage static pages
+    Register siders: Register siders
     sign_in: Sign in admin zone
+    welcome: Welcome to admin zone
+    # sider_types
+    activity: Activity
+    absent_module: This module absent. Please delete its registration.
+    delete_registration: You can delete registration.
+    delete_registration_confirm: This deletes all siders based on this Helper module. If you want temporarly switch off siders use activity control. Continue?
+    description: Description
+    disabled: Disabled. 
+    enabled: Enabled. 
+    module: Module
+    register: Register
+    register_please: Please register sider first.
+    registered: Registered.
+    registration: Registration
+    toggle: Toggle activity.
+    # siders
+    create_new: Create new
+    edit_sider: Edit Sider
+    general_settings: General settings
+    new_sider: New Sider
+    position: Position
+    Select this type: Select this type
+    select_sider_type: Select sider type for new sider
+    sider_params: Sider parameters
+    title: Title
+    type: Type
 
 devise:
     Forgot your password?: Forgot your password?
+    sign_out: Sign out, %1
     
 helpers:
     label:
         user:
             remember_me: Remember me
+        sider:
+            access_level: Access level
+            display_order: Display order
+            enabled: Enabled?
+            sider_position: Sider position
+            title: Title
+            
+
+static_page:
+    no_matches: No matches for URL '%1'

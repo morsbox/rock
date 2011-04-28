@@ -1,4 +1,4 @@
-<h2>Structure of categories</h2>
+<h2><%= t.admin["Manage categories"] %></h2>
 <%= form_for [:admin,PageCategory.new] do |f| %>
   <%= f.text_field :title %>
   <% @options_tree = [["root", nil]]+draw_options_tree %>

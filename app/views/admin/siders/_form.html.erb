@@ -10,8 +10,8 @@
   </div>
   <% end %>
   <fieldset class='admin_form'>
-    <legend>General settings</legend>
-    <span class='left_column'>Type:</span>
+    <legend><%= t.admin.general_settings %></legend>
+    <span class='left_column'><%= t.admin.type %></span>
     <span class='right_column'><%= @sider.sider_type.sider_helper_module %></span>
     <%= f.hidden_field :sider_type_id %>
     <%= f.label :title %><%= f.text_field :title %>
@@ -21,7 +21,7 @@
     <%= f.label :enabled %><%= f.check_box :enabled %>
   </fieldset>
   <fieldset class='admin_form'>
-    <legend>Sider parameters</legend>
+    <legend><%= t.admin.sider_params %></legend>
     <% @sider_helper_params.each_key do |p| %>
       <%= param_fields p %>
     <% end %>
