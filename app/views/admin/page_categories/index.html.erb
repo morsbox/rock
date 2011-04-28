@@ -1,4 +1,14 @@
 <h2><%= t.admin["Manage categories"] %></h2>
+<% if flash[:errors] %>
+<div id="errorExplanation">
+  <h2><%= t.errors.header(flash[:errors].count, PageCategory.human_name) %>:</h2>
+  <ul>
+  <% flash[:errors].full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
 <%= form_for [:admin,PageCategory.new] do |f| %>
   <%= f.text_field :title %>
   <% @options_tree = [["root", nil]]+draw_options_tree %>

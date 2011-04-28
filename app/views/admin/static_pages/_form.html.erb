@@ -1,7 +1,7 @@
 <%= form_for [:admin, @static_page] do |f| %>
   <% if flash[:errors] %>
   <div id="errorExplanation">
-    <h2><%= pluralize(flash[:errors].count, "error") %> prohibited this static page from being saved:</h2>
+    <h2><%= t.errors.header(flash[:errors].count, StaticPage.human_name) %>:</h2>
     <ul>
     <% flash[:errors].full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -10,7 +10,7 @@
   </div>
   <% end %>
   <fieldset class='admin_form'>
-    <legend>General settings</legend>
+    <legend><%= t.admin.general_settings %></legend>
     <%= f.label :url_match %><%= f.text_field :url_match %>
     <%= f.label :title %><%= f.text_field :title %>
     <%= f.label :show_title %><%= f.check_box :show_title %>

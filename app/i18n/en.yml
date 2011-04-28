@@ -1,7 +1,25 @@
 activerecord:
+    attributes:
+        user:
+            remember_me: Remember me
+        sider:
+            access_level: Access level
+            display_order: Display order
+            enabled: Enabled?
+            sider_position: Sider position
+            title: Title
+        static_page:
+            access_level: Access level
+            content: Content
+            page_category_id: Page category
+            show_title: Show title?
+            title: Title
+            url_match: URL match
     models:
         page_category: Category of pages
         sider: Sider
+        sider_type: Sider Type
+        static_page: Static Page
         
 admin:
     admin_zone: admin zone
@@ -39,22 +57,18 @@ admin:
     sider_params: Sider parameters
     title: Title
     type: Type
+    # static_pages
+    edit_static_page: Edit static page
+    new_static_page: New static page
 
 devise:
     Forgot your password?: Forgot your password?
     sign_out: Sign out, %1
-    
-helpers:
-    label:
-        user:
-            remember_me: Remember me
-        sider:
-            access_level: Access level
-            display_order: Display order
-            enabled: Enabled?
-            sider_position: Sider position
-            title: Title
-            
 
+errors:
+    header: !!pl
+        1: One error prohibited this %2 from being saved
+        n: %1 errors prohibited this %2 from being saved
+    
 static_page:
     no_matches: No matches for URL '%1'

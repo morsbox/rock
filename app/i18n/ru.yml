@@ -1,7 +1,25 @@
 activerecord:
+    attributes:
+        user:
+            remember_me: Запомните меня
+        sider:
+            access_level: Уровень доступа
+            display_order: Порядок отображения
+            enabled: Включен?
+            sider_position: Позиция сайдера
+            title: Заголовок
+        static_page:
+            access_level: Уровень доступа
+            content: Контент
+            page_category_id: Категория страницы
+            show_title: Показать заголовок?
+            title: Заголовок
+            url_match: Соответствующий URL
     models:
         page_category: Категория страниц
         sider: Сайдер
+        sider_type: Тип сайдера
+        static_page: Статичная страница
         
 admin:
     admin_zone: административная зона
@@ -39,21 +57,19 @@ admin:
     sider_params: Параметры сайдера
     title: Заголовок
     type: Тип
+    # static_pages
+    edit_static_page: Редактирование статичной страницы
+    new_static_page: Новая статичная страница
     
 devise:
     Forgot your password?: Забыли пароль?
     sign_out: Выйти, %1
-    
-helpers:
-    label:
-        user:
-            remember_me: Запомните меня
-        sider:
-            access_level: Уровень доступа
-            display_order: Порядок отображения
-            enabled: Включен?
-            sider_position: Позиция сайдера
-            title: Заголовок
+
+errors:
+    header: !!pl
+        1: Не удалось сохранить %2 из-за одной ошибки
+        2: Не удалось сохранить %2 из-за %1 ошибок
+        n: Не удалось сохранить %2 из-за %1 ошибок
 
 static_page:
     no_matches: Нет совпадений для URL '%1'
