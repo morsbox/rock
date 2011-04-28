@@ -1,0 +1,10 @@
+admin:
+    sign_in: Sign in admin zone
+
+devise:
+    Forgot your password?: Forgot your password?
+    
+helpers:
+    label:
+        user:
+            remember_me: Remember me

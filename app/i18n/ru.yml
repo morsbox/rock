@@ -1,0 +1,10 @@
+admin:
+    sign_in: Вход в административную зону
+    
+devise:
+    Forgot your password?: Забыли пароль?
+    
+helpers:
+    label:
+        user:
+            remember_me: Запомните меня

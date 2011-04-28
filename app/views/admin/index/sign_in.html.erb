@@ -1,10 +1,10 @@
-<h2>Sign in</h2>
+<h2><%= t.admin.sign_in %></h2>
 
 <%= form_for("user", :url => user_session_path(:admin_zone=>true)) do |f| %>
   <%= f.text_field :username %>
   <%= f.password_field :password %>
   <%= f.check_box :remember_me %>
   <%= f.label :remember_me %>
-  <%= f.submit 'Sign in' %>
-  <%= link_to "Forgot your password?", new_password_path('user') %>
+  <%= f.submit t.admin.sign_in %>
+  <%= link_to t.devise["Forgot your password?"], new_password_path('user') %>
 <% end %>
