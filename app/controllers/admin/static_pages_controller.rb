@@ -38,7 +38,9 @@ class Admin::StaticPagesController < Admin::IndexController
     StaticPage.find(params[:id]).destroy
     redirect_to admin_static_pages_path
   end
-  
+
+private
+
   def load_categories_graph
     @categories_graph, @categories = {},{}
     PageCategory.all.each do |c|

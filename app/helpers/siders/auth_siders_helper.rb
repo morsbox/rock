@@ -16,7 +16,7 @@ module ApplicationHelper
   def auth_siders_output(p)
     title = "<h3 class='auth_title'>#{p[:title]}</h3>" if p[:show_title]=='1'
     if user_signed_in?
-      form = "<p>#{p[:greeting_msg]}</p>"
+      form = "<p>#{t.siders.auth.greeting}</p>"
       form+= link_to "Sign out, #{current_user.username}", destroy_user_session_path
     else
       form = capture{form_for("user", :url => user_session_path) do |f|
