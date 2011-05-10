@@ -1,5 +1,30 @@
-What is needed:
+Rock'n'Ror - CMS for easy websites, based on Ruby on Rails
+==========================================================
 
+Installing
+----------
+Rock is under construction, so not install it :)
+For testing you can simple 
+
+Functionality
+-------------
+1. Superadmin user created as seed when 'rake db:seed' with standart paasword.
+_Don't forget to change pass!_
+2. Admin zone situated in /admin path. Authorization is common both for admin
+zone and for frontend.
+3. Used standart Rails layout concepte. Default is layouts/application
+4. Static pages have url_match field. So if no matching resources found - system
+seek for matching static page
+5. Siders is registered view helper, they are is placed on webpage on the sides
+of content. Siders have some position, which must be marked in layout as
+'sider :sidername'. Sider helpers must be placed in helpers/siders. Sider helper
+file must contain some mandatory information - see for example [static_siders_helper.rb](https://github.com/Mik-die/rock/blob/master/app/helpers/siders/static_siders_helper.rb)
+6. Menu - no completed now.
+
+
+
+TODO list
+---------------
 1. User system with some access levels. Every action or shown page must have
 minimal access level. Default - for frontend page 0 (it equal guest level), for
 backend (admin) zone - 50. Superadmin have level 100. Blocked user have negative
