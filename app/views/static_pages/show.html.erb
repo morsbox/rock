@@ -1,4 +1,4 @@
 <% @current_pages.each do |page| %>
-  <% if page.show_title %><h2><%= page.title %></h2><% end %>
+  <% if page.show_title %><h2><%= link_to page.title, page.link %></h2><% end %>
   <div class="page_content"><%= raw page.content %></div>
 <% end %>
